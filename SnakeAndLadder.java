@@ -8,6 +8,9 @@ public class SnakeAndLadder {
 		System.out.println("Game begins:Player1 starts at position: "+ player1Pos);
 		
 
+		
+		
+
 	}
 
 }
