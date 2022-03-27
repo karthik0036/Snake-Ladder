@@ -5,16 +5,20 @@ public class SnakeAndLadder {
 	public static final int NO_PLAY=0;
     public static final int LADDER=1;
     public static final int SNAKE=2;
+    public static final int WINNING_Position = 100;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int player1Pos = 0;
 		System.out.println("Game begins:Player1 starts at position: "+ player1Pos);
 		
+		while (player1Pos<=100) {
 		int rollDice= (int) (Math.floor(Math.random() * 10) % 6 )+1;
 		System.out.println("value of rolled Dice: "+ rollDice);
 		
-		 int opt = (int) Math.floor(Math.random() * 10) % 3;
+		// 0,1,2
+		
+		int opt = (int) Math.floor(Math.random() * 10) % 3;
 	        switch (opt) {
 	            case NO_PLAY:
 	                System.out.println("Player1 stays in same position: "+player1Pos);
@@ -31,11 +35,12 @@ public class SnakeAndLadder {
 	                System.out.println("Player1 moves back: "+player1Pos);
 	                break;
 	        }
-		
-
-		
-		
-
-	}
-
+	        System.out.println("Player1 won: "+player1Pos);
 }
+}
+}
+
+		
+		
+
+
