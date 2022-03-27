@@ -8,32 +8,35 @@ public class SnakeAndLadder {
     public static final int WINNING_Position = 100;
 
 	public static void main(String[] args) {
-		int player1Pos = 0;
-        System.out.println("Game begins: player1 at position: " + player1Pos);
-        while (player1Pos<=100) {
-            int rollDice = (int) (Math.floor(Math.random() * 10) % 6) + 1;
-            int opt = (int) Math.floor(Math.random() * 10) % 3;
-            switch (opt) {
-                case NO_PLAY:
-                    System.out.println("Player1 stays in same position: " + player1Pos);
-                    break;
-                case LADDER:
-                    player1Pos = player1Pos+ rollDice;
-                    System.out.println("Ladder "+rollDice+" Player1 position: " + player1Pos);
-                    break;
-                case SNAKE:
-                    player1Pos = player1Pos - rollDice;
-                    if (player1Pos < 0) {
-                        player1Pos = 0;
-                    }
-                    System.out.println("Snake "+rollDice+" Player1 position: " + player1Pos);
-                    break;
-            }
-        }
-        System.out.println("Player1 won: "+player1Pos);
-}
-}
-
+	     int player1Position = 0;
+	        System.out.println("Game begins: player1 at position: " + player1Position);
+	        while (player1Position<WINNING_Position) {
+	            int player1Dice = (int) (Math.floor(Math.random() * 10) % 6) + 1;
+	            int opt = (int) Math.floor(Math.random() * 10) % 3;
+	            switch (opt) {
+	                case NO_PLAY:
+	                    System.out.println("Player1 stays in same position: " + player1Position);
+	                    break;
+	                case LADDER:
+	                    player1Position = player1Position + player1Dice;
+	                    if(player1Position>WINNING_Position) {
+	                        player1Position=player1Position-player1Dice;
+	                        break;
+	                    }
+	                        System.out.println("Ladder " + player1Dice + " Player1 position: " + player1Position);
+	                    break;
+	                case SNAKE:
+	                    player1Position = player1Position - player1Dice;
+	                    if (player1Position < 0) {
+	                        player1Position = 0;
+	                    }
+	                    System.out.println("Snake "+player1Dice+" Player1 position: " + player1Position);
+	                    break;
+	            }
+	        }
+	        System.out.println("Player1 won: "+player1Position);
+	    }
+	}
 		
 		
 
